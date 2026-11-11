@@ -1,33 +1,32 @@
 # DrainScout
 
-Tiny Android diagnostics app to catch idle drain and wakelock candidates.
+Tiny Android diagnostics app for idle drain, wakelocks, and battery anomalies.
 
-## What it does
-- checks whether the device has ADB or Shizuku available
-- tries to collect battery, wake-lock, and alarm data from the device shell
-- surfaces likely idle-drain suspects in a minimal UI
-- makes it easy to copy the report for debugging or sharing
+## Purpose
+DrainScout is a compact helper for Android debugging. It checks whether Shizuku or ADB-style shell access is available and then gathers basic `dumpsys` output to look for common idle-drain patterns such as:
 
-## What you need
-- Android phone or emulator
-- Shizuku installed and running with `Shell` permission for the best results
-- optional ADB access from a host machine to compare shell output
+- wakelocks
+- repeated alarms
+- pending broadcast activity
+- background wakeups and battery stats anomalies
+
+## Current scope
+This is intentionally a small app focused on diagnosis and reporting, not a battery optimizer.
 
 ## How to use
-1. Install and open the app.
-2. Start Shizuku and grant Shell access.
+1. Install the app on your device.
+2. Open Shizuku and grant Shell access, if available.
 3. Tap "Capture idle stats".
-4. Review the findings and copy the report.
+4. Review the report and copy it if needed.
+5. If Shizuku is unavailable, use the app as a guide to collect the same commands via ADB or a rooted shell.
 
-## Typical checks the app runs
+## Typical commands the app looks for
 - `dumpsys batterystats --charged`
-- `dumpsys batterystats` (best effort)
 - `dumpsys alarm`
-- `dumpsys window`
-- `dumpsys activity broadcasts`
 - `dumpsys wakefulness`
+- `dumpsys activity broadcasts`
+- `dumpsys window`
 
 ## Notes
-- This is intentionally a small, debugging-focused app.
-- On some devices, shell access is limited without Shizuku or a rooted/adb-enabled environment.
-- This app is for analysis and debugging, not for production use as a battery optimizer.
+- Real device-level diagnosis may still require root, ADB host access, or Shizuku shell permission.
+- This app focuses on being a lightweight triage and reporting tool.

@@ -1,2 +1,2 @@
-# Keep it simple for this minimal diagnostic app.
+# Keep it simple.
 -keepattributes *Annotation*
