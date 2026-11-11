@@ -5,31 +5,42 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- A radar lens with a water-drop signal: DrainScout's inspection mark. -->
+    <!-- Soft radar arcs frame the battery mark while staying inside the adaptive-icon safe zone. -->
     <path
-        android:fillColor="#102936"
-        android:strokeColor="#9CC8FF"
-        android:strokeWidth="2.5"
-        android:pathData="M54,20A34,34 0,1 1,54 88A34,34 0,1 1,54 20Z" />
-    <path
-        android:fillColor="#07131B"
-        android:strokeColor="#31566A"
-        android:strokeWidth="1.5"
-        android:pathData="M54,28A26,26 0,1 1,54 80A26,26 0,1 1,54 28Z" />
-
-    <!-- Four scan ticks stay within the adaptive-icon safe zone. -->
-    <path
-        android:fillColor="@android:color/transparent"
+        android:fillColor="#00000000"
         android:strokeColor="#8AE6C9"
-        android:strokeWidth="3"
+        android:strokeWidth="4"
         android:strokeLineCap="round"
-        android:pathData="M54,31L54,36M54,72L54,77M31,54L36,54M72,54L77,54" />
+        android:pathData="M24,48 C25,34 32,24 43,18" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#8AE6C9"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M84,48 C83,34 76,24 65,18" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#9CC8FF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M18,58 C19,72 26,82 37,88" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#9CC8FF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M90,58 C89,72 82,82 71,88" />
 
-    <!-- Water drop / location pin. -->
+    <!-- Battery case and terminal. -->
+    <path
+        android:fillColor="#9CC8FF"
+        android:pathData="M45,24 C45,21.8 46.8,20 49,20 L59,20 C61.2,20 63,21.8 63,24 L63,28 L67,28 C72,28 76,32 76,37 L76,72 C76,77 72,81 67,81 L41,81 C36,81 32,77 32,72 L32,37 C32,32 36,28 41,28 L45,28 Z" />
+    <path
+        android:fillColor="#0E1E2A"
+        android:pathData="M40,37 C40,35.9 40.9,35 42,35 L66,35 C67.1,35 68,35.9 68,37 L68,71 C68,72.1 67.1,73 66,73 L42,73 C40.9,73 40,72.1 40,71 Z" />
+
+    <!-- DrainScout lightning signal. -->
     <path
         android:fillColor="#8AE6C9"
-        android:pathData="M54,35C49,43 41,51 41,59A13,13 0,0 0,67 59C67,51 59,43 54,35Z" />
-    <path
-        android:fillColor="#0B202A"
-        android:pathData="M55,47L47,59L53,59L51,68L61,55L55,55Z" />
+        android:pathData="M56,39 L45,56 C44.4,57 45.1,58.3 46.3,58.3 L53,58.3 L50,69 C49.6,70.4 51.3,71.3 52.3,70.2 L64,54.8 C64.8,53.8 64.1,52.3 62.8,52.3 L56.2,52.3 L59,40.5 C59.3,39.1 56.9,37.9 56,39 Z" />
 </vector>
