@@ -1,29 +1,29 @@
 # DrainScout
 
-Android battery-drain triage app with Shizuku-authorized shell collection. The app emphasizes evidence over guesses: capture a baseline, repeat after a controlled screen-off interval, and compare.
+A small Android app for investigating idle drain, wakelocks, and repeating alarms using Shizuku-authorized shell access.
 
-## Features
-- Tabbed Overview, Wakelocks, Alarms, Idle, and Report views
-- ViewModel + StateFlow UI state and background diagnostic collection
-- Shizuku permission gate; no privileged dumpsys calls before explicit approval
-- Battery stats, power/wakelock, alarm, and device-idle snapshots
-- Heuristic findings with cautious language, plus copy/share report actions
-- Bounded command duration/output to keep large device dumps manageable
+## Included in this release
+- tabbed overview, wakelocks, alarms, idle, and report views
+- battery, power, alarm, and device-idle collection from `dumpsys`
+- Shizuku permission gate before privileged commands run
+- heuristic findings with careful wording instead of claiming certainty
+- copy and share report actions
+- comparison-friendly flow for repeated captures over the same screen-off interval
 
 ## Build
-JDK 17, Android SDK 34, Gradle 8.7+:
+Requirements: JDK 17, Android SDK 34, Gradle 8.7+
 
-```sh
+```bash
 gradle :app:assembleDebug
 gradle :app:assembleRelease
 ```
 
 ## Use
-1. Start Shizuku using its setup for your device.
-2. Open DrainScout and grant access.
-3. Capture a baseline; note time and battery percentage.
-4. Leave the screen off for a repeatable interval and capture again.
-5. Compare the Wakelocks and Alarms tabs, and share the report if desired.
+1. Open Shizuku and grant Shell access to DrainScout.
+2. Tap Capture.
+3. Record battery percentage and time.
+4. Leave the device idle for a consistent interval and capture again.
+5. Compare Wakelocks and Alarms across captures.
 
 ## Limitations
-`dumpsys` formats and access vary by Android release and manufacturer. A single snapshot cannot prove root cause; alarm and wakelock matches are investigative clues, not battery attribution. Compare intervals and corroborate with the device's battery usage view or host ADB. DrainScout does not kill apps or change system settings. The UI and analysis are original and this project is not affiliated with BetterBatteryStats.
+`dumpsys` output differs by Android version and manufacturer. One capture is not enough to prove a cause. This tool is for triage, not for final attribution. It does not alter system settings or kill apps. It is not affiliated with BetterBatteryStats.
