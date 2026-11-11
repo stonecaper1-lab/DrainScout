@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- A radar lens with a water-drop signal: DrainScout's inspection mark. -->
+    <path
+        android:fillColor="#102936"
+        android:strokeColor="#9CC8FF"
+        android:strokeWidth="2.5"
+        android:pathData="M54,20A34,34 0,1 1,54 88A34,34 0,1 1,54 20Z" />
+    <path
+        android:fillColor="#07131B"
+        android:strokeColor="#31566A"
+        android:strokeWidth="1.5"
+        android:pathData="M54,28A26,26 0,1 1,54 80A26,26 0,1 1,54 28Z" />
+
+    <!-- Four scan ticks stay within the adaptive-icon safe zone. -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#8AE6C9"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M54,31L54,36M54,72L54,77M31,54L36,54M72,54L77,54" />
+
+    <!-- Water drop / location pin. -->
+    <path
+        android:fillColor="#8AE6C9"
+        android:pathData="M54,35C49,43 41,51 41,59A13,13 0,0 0,67 59C67,51 59,43 54,35Z" />
+    <path
+        android:fillColor="#0B202A"
+        android:pathData="M55,47L47,59L53,59L51,68L61,55L55,55Z" />
+</vector>
